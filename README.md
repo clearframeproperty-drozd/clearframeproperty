@@ -24,22 +24,37 @@ styles.css                   — вся дизайн-система (общая 
 config.js                     — ЕДИНЫЙ конфиг: телефон, email, цены, ссылки
 common.js                     — общая логика: меню, форма, FAQ, слайдер, анимации, счётчики
 favicon.svg
+og-image.jpg                  — превью для соцсетей (1200×630), уже сгенерировано
 ```
 
 ## 1. Залить на GitHub
 
+Репозиторий уже инициализирован локально, файлы закоммичены, и remote `origin` указывает на:
+
+```
+https://github.com/clearframeproperty-drozd/clearframeproperty.git
+```
+
+Осталось только авторизоваться и отправить коммит — на машине, где это делалось, не было сохранённых GitHub-учётных данных, так что этот последний шаг нужно выполнить из вашего терминала:
+
 ```bash
-git init
-git add .
-git commit -m "ClearFrame — многостраничный сайт"
-git branch -M main
-git remote add origin https://github.com/ВАШ_ЛОГИН/ВАШ_РЕПОЗИТОРИЙ.git
+cd "clearframe Project"
 git push -u origin main
 ```
 
-Затем: **Settings → Pages → Source → Deploy from a branch → main / (root)**.
+Если репозиторий на GitHub ещё не создан — создайте пустой репозиторий `clearframeproperty` под аккаунтом `clearframeproperty-drozd` на github.com (без README/лицензии, чтобы не было конфликта), и только потом выполните `git push` выше.
 
-## 2. Подключить свой домен
+Git спросит логин/пароль — GitHub больше не принимает обычный пароль аккаунта для `git push` по HTTPS, нужен **Personal Access Token** (Settings → Developer settings → Personal access tokens → Generate new token, права `repo`), который вводится вместо пароля. Проще всего один раз сохранить его в Keychain:
+
+```bash
+git config --global credential.helper osxkeychain
+```
+
+— после первого успешного пуша с токеном macOS больше не будет спрашивать заново.
+
+Затем на GitHub: **Settings → Pages → Source → Deploy from a branch → main / (root)**. Сайт появится по адресу `https://clearframeproperty-drozd.github.io/clearframeproperty/` в течение пары минут.
+
+## 2. Подключить свой домен (опционально, можно позже)
 
 1. Создайте в корне репозитория файл `CNAME` с вашим доменом (одна строка, без `http://`):
    ```
