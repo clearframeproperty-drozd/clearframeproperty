@@ -25,6 +25,7 @@ config.js                     — ЕДИНЫЙ конфиг: телефон, ema
 common.js                     — общая логика: меню, форма, FAQ, слайдер, анимации, счётчики
 favicon.svg
 og-image.jpg                  — превью для соцсетей (1200×630), уже сгенерировано
+cloudflare-worker.js          — прокси для Telegram-уведомлений (см. раздел 5)
 ```
 
 ## 1. Залить на GitHub
@@ -115,20 +116,25 @@ window.SITE_CONFIG = {
    FORMSPREE_ENDPOINT: "https://formspree.io/f/ВАШ_ID",
    ```
 
-### Telegram
+### Telegram (через Cloudflare Worker — токен не светится в коде)
 
-1. В Telegram: **@BotFather** → `/newbot` → получите токен.
-2. Напишите боту любое сообщение, чтобы он вас "увидел".
-3. Узнайте chat_id через `https://api.telegram.org/bot<ТОКЕН>/getUpdates`.
-4. В `config.js`:
+Сайт статический, без бэкенда, поэтому токен бота нельзя просто положить в `config.js` — он был бы виден в исходном коде любому. Вместо этого браузер стучится на бесплатный Cloudflare Worker (`cloudflare-worker.js` в корне репозитория), а сам Worker уже дергает Telegram API с токеном, который хранится не в git, а в секретах Cloudflare.
+
+1. В Telegram: **@BotFather** → `/newbot` → получите токен вида `123456:ABC-DEF...`.
+2. Напишите своему новому боту любое сообщение — иначе Telegram не создаст chat_id.
+3. Узнайте chat_id: откройте `https://api.telegram.org/bot<ТОКЕН>/getUpdates` в браузере, найдите `"chat":{"id": ЧИСЛО, ...}`.
+4. Зарегистрируйтесь на https://dash.cloudflare.com/sign-up (бесплатно).
+5. **Workers & Pages → Create → Create Worker** → дайте имя (например `clearframe-notify`) → **Deploy** (заготовку) → **Edit code** → вставьте содержимое `cloudflare-worker.js` из этого репозитория → **Deploy**.
+6. В настройках Worker'а: **Settings → Variables and Secrets → Add** → добавьте `TELEGRAM_BOT_TOKEN` и `TELEGRAM_CHAT_ID` как **Secret** (не Plaintext) → Save and deploy.
+7. Скопируйте адрес Worker'а (вида `https://clearframe-notify.ВАШ_АККАУНТ.workers.dev`) и вставьте в `config.js`:
    ```js
-   TELEGRAM_BOT_TOKEN: "ВАШ_ТОКЕН",
-   TELEGRAM_CHAT_ID: "ВАШ_CHAT_ID",
+   TELEGRAM_PROXY_URL: "https://clearframe-notify.ВАШ_АККАУНТ.workers.dev",
    ```
+8. В самом `cloudflare-worker.js` проверьте список `ALLOWED_ORIGINS` в начале файла — там должен быть адрес вашего сайта (GitHub Pages или домен), иначе Worker будет отклонять запросы с других источников.
 
-### ⚠️ Нюанс безопасности
+### ⚠️ Про Formspree ID
 
-Токен Telegram и Formspree ID видны в исходном коде страницы, так как сайт статический. Практический риск невелик (посторонний сможет максимум флудить в бот-чат, не более). Подробности — см. README из первой версии сайта, либо спросите — помогу вынести отправку в бесплатный Cloudflare Worker, если хотите убрать этот риск полностью.
+`FORMSPREE_ENDPOINT` в коде виден всем — это нормально: Formspree сам ограничивает частоту отправок и фильтрует спам, ничего секретного в этом ID нет.
 
 ## 6. Что ещё стоит сделать перед публикацией
 

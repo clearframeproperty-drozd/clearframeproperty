@@ -131,14 +131,11 @@
         }));
       }
 
-      if (CFG.TELEGRAM_BOT_TOKEN && !CFG.TELEGRAM_BOT_TOKEN.includes('YOUR_TELEGRAM_BOT_TOKEN')) {
-        const lines = Object.entries(data).filter(([k]) => k !== 'company_website')
-          .map(([k, v]) => `${k}: ${v || '-'}`).join('\n');
-        const text = `New request (${form.dataset.formName || 'form'})\n` + lines;
-        tasks.push(fetch(`https://api.telegram.org/bot${CFG.TELEGRAM_BOT_TOKEN}/sendMessage`, {
+      if (CFG.TELEGRAM_PROXY_URL && !CFG.TELEGRAM_PROXY_URL.includes('YOUR_WORKER_URL')) {
+        tasks.push(fetch(CFG.TELEGRAM_PROXY_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ chat_id: CFG.TELEGRAM_CHAT_ID, text })
+          body: JSON.stringify({ formName: form.dataset.formName || 'form', data })
         }));
       }
 
