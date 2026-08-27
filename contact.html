@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — ClearFrame Property Records</title>
+<meta name="description" content="Get in touch with ClearFrame Property Records — Carlsbad and North County San Diego rental condition documentation.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="has-mobile-cta">
+
+<header>
+  <nav>
+    <a href="index.html" class="logo"><span class="logo-mark"><span class="l1"></span><span class="l2"></span><span class="l3"></span><span class="l4"></span></span>ClearFrame</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="navlinks" id="navLinks">
+      <a href="services.html" class="navlink">Services</a>
+      <a href="sample-report.html" class="navlink">Sample Report</a>
+      <a href="for-landlords.html" class="navlink">For Landlords</a>
+      <a href="for-renters.html" class="navlink">For Renters</a>
+      <a href="how-it-works.html" class="navlink">How It Works</a>
+      <a href="faq.html" class="navlink">FAQ</a>
+      <a href="contact.html" class="navlink" aria-current="page">Contact</a>
+      <a href="book.html" class="cta-nav">Book a Visit</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="page-header" style="padding-bottom:20px;">
+    <div class="wrap">
+      <span class="eyebrow">Contact</span>
+      <h1>Questions before you book? Reach out directly.</h1>
+      <div class="contact-strip" style="margin-top:24px;">
+        <a href="tel:" data-cfg-tel>📞 <span data-cfg="PHONE_DISPLAY"></span></a>
+        <a href="mailto:" data-cfg-mail>✉️ <span data-cfg="EMAIL"></span></a>
+        <span>📍 <span data-cfg="SERVICE_AREA_SHORT"></span></span>
+        <span>🕐 <span data-cfg="BUSINESS_HOURS"></span></span>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:10px;">
+    <div class="wrap" style="display:grid; grid-template-columns:1.2fr 1fr; gap:56px; align-items:start;">
+      <form id="contactForm" class="styled reveal" data-submit-form data-form-name="Contact Form">
+        <input type="text" name="company_website" class="honeypot" tabindex="-1" autocomplete="off">
+        <div class="form-row">
+          <div class="field"><label for="cname">Full Name</label><input type="text" id="cname" name="name" required></div>
+          <div class="field"><label for="cemail">Email</label><input type="email" id="cemail" name="email" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field full"><label for="csubject">Subject</label><input type="text" id="csubject" name="subject" placeholder="What's this about?"></div>
+        </div>
+        <div class="form-row">
+          <div class="field full"><label for="cmessage">Message</label><textarea id="cmessage" name="message" required placeholder="How can we help?"></textarea></div>
+        </div>
+        <div class="submit-row">
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <span class="form-status mono"></span>
+        </div>
+      </form>
+
+      <div class="reveal">
+        <div class="bracket-frame in-focus" style="margin-bottom:24px;">
+          <span class="bk-tr"></span><span class="bk-br"></span>
+          <div style="background:var(--sand); border-radius:var(--radius); padding:26px; min-height:220px; display:flex; flex-direction:column; justify-content:center;">
+            <span class="eyebrow">Service area</span>
+            <h3 style="font-size:19px; margin-bottom:10px;">Carlsbad &amp; North County San Diego</h3>
+            <p style="font-size:14px; color:var(--muted);">Carlsbad · Oceanside · Encinitas · Vista · San Marcos · Solana Beach · Del Mar · nearby North County communities</p>
+          </div>
+        </div>
+        <p style="font-size:14px; color:var(--muted);">Prefer a live calendar? <a href="#" data-cfg-booking style="color:var(--teal-deep); font-weight:600;">Check availability →</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="fcol">
+      <a href="index.html" class="logo" style="margin-bottom:12px;"><span class="logo-mark"><span class="l1"></span><span class="l2"></span><span class="l3"></span><span class="l4"></span></span>ClearFrame</a>
+      <p class="mono">Property Condition Visual Records<br>Carlsbad &amp; North County San Diego</p>
+    </div>
+    <div class="fcol">
+      <h5>Contact</h5>
+      <a href="mailto:" data-cfg-mail><span data-cfg="EMAIL"></span></a>
+      <a href="tel:" data-cfg-tel><span data-cfg="PHONE_DISPLAY"></span></a>
+      <p class="mono" data-cfg="BUSINESS_HOURS"></p>
+    </div>
+    <div class="fcol">
+      <h5>Company</h5>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="sample-report.html">Sample Report</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+    <div class="fcol">
+      <h5>Legal</h5>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Service Disclaimer</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© <span class="js-year"></span> <span data-cfg="BRAND_NAME"></span>. Visual documentation only — not a home inspection, repair estimate, code-compliance inspection, or legal determination of responsibility. Information on this website is general information and is not legal advice.</p>
+  </div>
+</footer>
+
+<div class="mobile-cta"><a href="book.html">Book a Visit</a></div>
+
+<script src="config.js"></script>
+<script src="common.js" defer></script>
+</body>
+</html>

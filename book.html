@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Documentation Visit — ClearFrame Property Records</title>
+<meta name="description" content="Request a rental condition documentation visit in Carlsbad and North County San Diego. Tell us about the property and we'll confirm availability.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="has-mobile-cta">
+
+<header>
+  <nav>
+    <a href="index.html" class="logo"><span class="logo-mark"><span class="l1"></span><span class="l2"></span><span class="l3"></span><span class="l4"></span></span>ClearFrame</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="navlinks" id="navLinks">
+      <a href="services.html" class="navlink">Services</a>
+      <a href="sample-report.html" class="navlink">Sample Report</a>
+      <a href="for-landlords.html" class="navlink">For Landlords</a>
+      <a href="for-renters.html" class="navlink">For Renters</a>
+      <a href="how-it-works.html" class="navlink">How It Works</a>
+      <a href="faq.html" class="navlink">FAQ</a>
+      <a href="contact.html" class="navlink">Contact</a>
+      <a href="book.html" class="cta-nav" aria-current="page">Book a Visit</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="page-header" style="padding-bottom:20px;">
+    <div class="wrap">
+      <span class="eyebrow">Book a Documentation Visit</span>
+      <h1>Tell us about the property. We'll confirm availability.</h1>
+      <p class="lede">Fill in as much as you can below — the more detail, the faster we can confirm a time and give you an accurate quote.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:10px;">
+    <div class="wrap">
+      <div class="reveal" style="margin-bottom:36px; border:1px solid var(--line); border-radius:var(--radius); background:var(--sand); padding:20px 24px;">
+        <p class="mono" style="font-size:13px; color:var(--navy-ink);">Prefer to pick a time on a live calendar? <a href="#" data-cfg-booking style="color:var(--teal-deep); font-weight:600;">Open our booking calendar →</a> (or use the form below — either way works).</p>
+      </div>
+
+      <form id="bookingForm" class="styled reveal" data-submit-form data-form-name="Booking Request" data-redirect="thank-you.html">
+        <input type="text" name="company_website" class="honeypot" tabindex="-1" autocomplete="off">
+
+        <div class="form-row">
+          <div class="field"><label for="name">Full Name</label><input type="text" id="name" name="name" required></div>
+          <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
+        </div>
+
+        <div class="form-row">
+          <div class="field"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" required></div>
+          <div class="field">
+            <label for="role">I am a:</label>
+            <select id="role" name="role">
+              <option>Property Owner</option>
+              <option>Property Manager</option>
+              <option>Realtor</option>
+              <option>Tenant</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field full"><label for="address">Property Address</label><input type="text" id="address" name="address" required></div>
+        </div>
+
+        <div class="form-row">
+          <div class="field"><label for="city">City</label><input type="text" id="city" name="city" required></div>
+          <div class="field">
+            <label for="proptype">Property Type</label>
+            <select id="proptype" name="proptype">
+              <option>Single-family home</option>
+              <option>Apartment</option>
+              <option>Condo</option>
+              <option>ADU</option>
+              <option>Multi-unit property</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field"><label for="bedrooms">Number of Bedrooms</label><input type="text" id="bedrooms" name="bedrooms"></div>
+          <div class="field"><label for="bathrooms">Number of Bathrooms</label><input type="text" id="bathrooms" name="bathrooms"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="field"><label for="sqft">Approximate Square Footage</label><input type="text" id="sqft" name="sqft"></div>
+          <div class="field">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
+              <option>Move-In Baseline</option>
+              <option>Move-Out Pre-Work Record</option>
+              <option>Post-Work Documentation</option>
+              <option>Complete Rental Record</option>
+              <option>Not Sure</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <fieldset><legend>Add a 3D Scan?</legend>
+              <div class="radio-grid">
+                <label class="radio-opt"><input type="radio" name="scan3d" value="Yes" checked> Yes</label>
+                <label class="radio-opt"><input type="radio" name="scan3d" value="No"> No</label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="field">
+            <fieldset><legend>Is the property vacant?</legend>
+              <div class="radio-grid">
+                <label class="radio-opt"><input type="radio" name="vacant" value="Yes" checked> Yes</label>
+                <label class="radio-opt"><input type="radio" name="vacant" value="No"> No</label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field"><label for="date">Preferred Date</label><input type="date" id="date" name="date"></div>
+          <div class="field"><label for="time">Preferred Time</label><input type="time" id="time" name="time"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <fieldset><legend>Has possession been returned?</legend>
+              <div class="radio-grid">
+                <label class="radio-opt"><input type="radio" name="possession" value="Yes" checked> Yes</label>
+                <label class="radio-opt"><input type="radio" name="possession" value="No"> No</label>
+                <label class="radio-opt"><input type="radio" name="possession" value="Not applicable"> N/A</label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="field"><label for="access">Who will provide access?</label><input type="text" id="access" name="access" placeholder="e.g. tenant, lockbox code, property manager"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="field full"><label for="notes">Additional Notes</label><textarea id="notes" name="notes" placeholder="Anything else we should know."></textarea></div>
+        </div>
+
+        <div class="form-row">
+          <div class="field full">
+            <label for="referral">How did you hear about us?</label>
+            <select id="referral" name="referral">
+              <option>Google Search</option>
+              <option>Referral from a friend or colleague</option>
+              <option>Property manager or realtor</option>
+              <option>Social media</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field full" style="margin-bottom:22px;">
+          <label class="checkbox-row"><input type="checkbox" required> I agree to be contacted by ClearFrame Property Records about this request.</label>
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="btn btn-primary">Submit Request</button>
+          <span class="form-status mono"></span>
+        </div>
+        <p style="font-size:12.5px; color:var(--muted); margin-top:18px; max-width:60ch;">We do not collect Social Security numbers, lease documents, or banking information through this form.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="fcol">
+      <a href="index.html" class="logo" style="margin-bottom:12px;"><span class="logo-mark"><span class="l1"></span><span class="l2"></span><span class="l3"></span><span class="l4"></span></span>ClearFrame</a>
+      <p class="mono">Property Condition Visual Records<br>Carlsbad &amp; North County San Diego</p>
+    </div>
+    <div class="fcol">
+      <h5>Contact</h5>
+      <a href="mailto:" data-cfg-mail><span data-cfg="EMAIL"></span></a>
+      <a href="tel:" data-cfg-tel><span data-cfg="PHONE_DISPLAY"></span></a>
+      <p class="mono" data-cfg="BUSINESS_HOURS"></p>
+    </div>
+    <div class="fcol">
+      <h5>Company</h5>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="sample-report.html">Sample Report</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+    <div class="fcol">
+      <h5>Legal</h5>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Service Disclaimer</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© <span class="js-year"></span> <span data-cfg="BRAND_NAME"></span>. Visual documentation only — not a home inspection, repair estimate, code-compliance inspection, or legal determination of responsibility. Information on this website is general information and is not legal advice.</p>
+  </div>
+</footer>
+
+<div class="mobile-cta"><a href="book.html">Book a Visit</a></div>
+
+<script src="config.js"></script>
+<script src="common.js" defer></script>
+</body>
+</html>
