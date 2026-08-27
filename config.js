@@ -30,5 +30,5 @@ window.SITE_CONFIG = {
   FORMSPREE_ENDPOINT: "https://formspree.io/f/mkjnwbpa",
   // Telegram-токен НЕ хранится здесь — см. cloudflare-worker.js и README.md.
   // Вставьте сюда адрес задеплоенного Worker'а (https://ИМЯ.ВАШ_АККАУНТ.workers.dev):
-  TELEGRAM_PROXY_URL: "YOUR_WORKER_URL"
+  TELEGRAM_PROXY_URL: "https://telegrambot.clearframeproperty.workers.dev"
 };
