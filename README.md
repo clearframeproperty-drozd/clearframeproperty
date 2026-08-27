@@ -26,7 +26,12 @@ common.js                     — общая логика: меню, форма,
 favicon.svg
 og-image.jpg                  — превью для соцсетей (1200×630), уже сгенерировано
 cloudflare-worker.js          — прокси для Telegram-уведомлений (см. раздел 5)
+404.html                       — кастомная страница "не найдено" (GitHub Pages подхватывает автоматически)
+robots.txt                      — разрешает индексацию, указывает на sitemap.xml
+sitemap.xml                      — карта сайта для поисковиков (10 индексируемых страниц)
 ```
+
+Каждая страница также несёт `canonical`, Open Graph и Twitter Card теги, и три ключевые страницы (`index.html`, `faq.html`, `services.html`) — структурированные данные (`LocalBusiness`, `FAQPage`, `Service`) для расширенных результатов в поиске Google. `privacy.html`, `terms.html` и `thank-you.html` намеренно помечены `noindex` — это служебные/юридические страницы, их не нужно показывать в поиске.
 
 ## 1. Залить на GitHub
 
@@ -71,6 +76,8 @@ git config --global credential.helper osxkeychain
      ```
    - CNAME-запись для `www` → `ВАШ_ЛОГИН.github.io`
 3. В Settings → Pages впишите домен, дождитесь "DNS check successful", включите "Enforce HTTPS".
+
+**Важно:** после подключения домена нужно заменить `https://clearframeproperty-drozd.github.io/clearframeproperty/` на новый адрес во всех SEO-тегах (`canonical`, `og:url`, `og:image` и т.п. на каждой странице) и в `robots.txt` / `sitemap.xml` — иначе Google и соцсети продолжат ссылаться на старый github.io-адрес. Просто попросите меня — это одна операция поиска-замены по всем файлам.
 
 ## 3. Заполнить config.js — САМЫЙ ВАЖНЫЙ ШАГ
 
