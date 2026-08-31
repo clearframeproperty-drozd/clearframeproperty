@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://clearframeproperty-drozd.github.io/clearframeproperty/sitemap.xml
+Sitemap: https://clearframeproperty.com/sitemap.xml
