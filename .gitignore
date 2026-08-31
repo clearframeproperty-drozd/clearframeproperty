@@ -24,3 +24,6 @@ npm-debug.log*
 
 # Dependencies (in case build tooling is added later)
 node_modules/
+
+# Raw/working photo exports — only the processed files in photos/ ship on the site
+Photos for report/
